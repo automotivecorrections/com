@@ -12,8 +12,8 @@ on:
       - 'docs/images/**'
 
 jobs:
-  converttopdf:
-    name: Build PDF
+  build:
+    name: Build page
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
