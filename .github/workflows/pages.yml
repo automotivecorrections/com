@@ -32,8 +32,8 @@ jobs:
           image_import: ./docs/images
           build_html: true
           build_pdf: false
-#      - name: copy images
-#        run: cp -r docs/images page/
+      - name: copy images
+        run: cp -r docs/images page/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: page
