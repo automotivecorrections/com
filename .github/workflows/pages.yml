@@ -23,10 +23,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: make output dir
+        run: mkdir -p ./page/images
       - uses: baileyjm02/markdown-to-pdf@v1
         with:
           input_dir: docs
-          output_dir: page
+          output_dir: ./page
           images_dir: images
           # for example <img src="./images/file-name.png">
           image_import: ./docs/images
@@ -36,7 +38,7 @@ jobs:
         run: cp -r docs/images page/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: page
+          path: ./page
 
   # Deployment job
   deploy:
